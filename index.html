@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szoboszlai István - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Szoboszlai István</h1>
+        <p>Full-stack Web Developer and more</p>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <select id="language-switcher">
+                    <option value="hu">Magyar</option>
+                    <option value="en">English</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my website!</p>
+        <p>My name is István Szoboszlai, and I'm a programmer with 4 years of experience in development.</p>
+        <p>Over the years, I have gained expertise in:</p>
+        <ul>
+            <li>Designing simple websites</li>
+            <li>Developing complex enterprise management systems for factories</li>
+            <li>Creating applications for tablets and other platforms</li>
+            <li>Designing and managing databases to ensure efficient and reliable system performance</li>
+        </ul>
+        <p>Perseverance is essential in my work: if a problem arises, I keep looking for a solution until it fully meets the user's requirements.</p>
+        <p>My goal is to create solutions that excel not only technically but also from a user perspective.</p>
+        <p>If you're looking for a reliable and dedicated developer, feel free to reach out to me!</p>
+    </section>
+    <section id="tools">
+        <h2>Tools I Use</h2>
+        <p>Throughout my career, I have worked with a variety of tools and technologies that help me deliver high-quality software solutions. Here are some of the key tools I use:</p>
+        <ul>
+            <li><img src="path/to/angular-logo.png" alt="Angular Logo" width="50"> Angular</li>
+            <li><img src="path/to/dotnet-logo.png" alt=".NET Logo" width="50"> .NET</li>
+            <li><img src="path/to/mssql-logo.png" alt="MSSQL Logo" width="50"> MSSQL</li>
+            <li><img src="path/to/oracle-logo.png" alt="Oracle Logo" width="50"> Oracle</li>
+            <li><img src="path/to/strapi-logo.png" alt="Strapi Logo" width="50"> Strapi</li>
+            <li><img src="path/to/nextjs-logo.png" alt="Next.js Logo" width="50"> Next.js</li>
+            <li><img src="path/to/ionic-logo.png" alt="Ionic Framework Logo" width="50"> Ionic Framework for Angular</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-slider">
+            <div class="project" onclick="nextProject()">
+                <img src="https://via.placeholder.com/800x400?text=Project+One" alt="Project 1" />
+                <h3>Project One</h3>
+                <p>A web application that simplifies task management and boosts productivity. Built with React and Node.js.</p>
+            </div>
+            <div class="project" onclick="nextProject()">
+                <img src="https://via.placeholder.com/800x400?text=Project+Two" alt="Project 2" />
+                <h3>Project Two</h3>
+                <p>An e-commerce platform offering seamless shopping experiences with integrated payment solutions. Developed using Django and Vue.js.</p>
+            </div>
+            <div class="project" onclick="nextProject()">
+                <img src="https://via.placeholder.com/800x400?text=Project+Three" alt="Project 3" />
+                <h3>Project Three</h3>
+                <p>A mobile-friendly website for a local restaurant, featuring an interactive menu and online reservation system. Created with HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you would like to get in touch, please use the form below or reach out via email or phone:</p>
+        <ul>
+            <li>Email: szistvan2014@gmail.com</li>
+            <li>Phone: +36 30 446 4794</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/istv%C3%A1n-szoboszlai-692b12223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app&fbclid=IwZXh0bgNhZW0CMTAAAR3rj-r5b4xUzYWTuB8SgeDn-o6bYrcjMYt8ZxvheueCRtLxE5M4x8cHVi8_aem_LX60al63cuENsMKUkh72MQ" target="_blank">linkedin.com/in/istvan</a></li>
+        </ul>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Szoboszlai István</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
