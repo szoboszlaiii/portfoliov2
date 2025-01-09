@@ -167,7 +167,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    fetch('portfolio_backend.railway.internal/send-email', {
+    fetch('https://portfoliobackend-production-ff9a.up.railway.app/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
