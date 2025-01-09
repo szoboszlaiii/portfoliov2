@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="hero-header">
         <h1>Szoboszlai István</h1>
-        <p>Full-stack Web Developer and more</p>
+        <p id="header-subtitle"></p>
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav class="hero-nav" id="navbar">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <select id="language-switcher">
+                        <option value="hu">Magyar</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <nav id="navbar">
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-                <select id="language-switcher">
-                    <option value="hu">Magyar</option>
-                    <option value="en">English</option>
-                </select>
-            </li>
-        </ul>
-    </nav>
     <section id="about">
         <h2>About Me</h2>
         <p>Welcome to my website!</p>
@@ -99,6 +99,9 @@
             <button type="submit">Send</button>
         </form>
     </section>
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>&uarr;</span>
+    </div>
     <footer>
         <p>&copy; 2025 Szoboszlai István</p>
     </footer>

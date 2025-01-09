@@ -154,10 +154,12 @@ function getCurrentLanguage() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateLanguage('hu');
+    document.getElementById('header-subtitle').textContent = translations['hu'].header;
 });
 
 document.getElementById('language-switcher').addEventListener('change', function() {
     updateLanguage(this.value);
+    document.getElementById('header-subtitle').textContent = translations[this.value].header;
 });
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -237,3 +239,28 @@ function toggleMenu() {
     const navbar = document.getElementById('navbar');
     navbar.classList.toggle('active');
 }
+
+document.getElementById('scrollToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+            // Add a temporary class for animation
+            targetElement.classList.add('highlight');
+            setTimeout(() => {
+                targetElement.classList.remove('highlight');
+            }, 1000); // Duration of the highlight effect
+        }
+    });
+});
