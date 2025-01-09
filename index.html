@@ -44,13 +44,13 @@
         <h2>Tools I Use</h2>
         <p>Throughout my career, I have worked with a variety of tools and technologies that help me deliver high-quality software solutions. Here are some of the key tools I use:</p>
         <ul>
-            <li><img src="path/to/angular-logo.png" alt="Angular Logo" width="50"> Angular</li>
-            <li><img src="path/to/dotnet-logo.png" alt=".NET Logo" width="50"> .NET</li>
-            <li><img src="path/to/mssql-logo.png" alt="MSSQL Logo" width="50"> MSSQL</li>
-            <li><img src="path/to/oracle-logo.png" alt="Oracle Logo" width="50"> Oracle</li>
-            <li><img src="path/to/strapi-logo.png" alt="Strapi Logo" width="50"> Strapi</li>
-            <li><img src="path/to/nextjs-logo.png" alt="Next.js Logo" width="50"> Next.js</li>
-            <li><img src="path/to/ionic-logo.png" alt="Ionic Framework Logo" width="50"> Ionic Framework for Angular</li>
+            <li> Angular</li>
+            <li> .NET</li>
+            <li> MSSQL</li>
+            <li> Oracle</li>
+            <li> Strapi</li>
+            <li> Next.js</li>
+            <li> Ionic Framework for Angular</li>
         </ul>
     </section>
     <section id="projects">
@@ -72,6 +72,11 @@
                 <p>A mobile-friendly website for a local restaurant, featuring an interactive menu and online reservation system. Created with HTML, CSS, and JavaScript.</p>
             </div>
         </div>
+        <div class="slider-dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </section>
     <section id="contact">
         <h2>Contact</h2>
@@ -84,10 +89,13 @@
         <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
+
             <button type="submit">Send</button>
         </form>
     </section>

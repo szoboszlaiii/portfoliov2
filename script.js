@@ -46,7 +46,8 @@ const translations = {
                 "Next.js",
                 "Ionic Framework for Angular"
             ]
-        }
+        },
+        emailSent: 'Email sent successfully!'
     },
     hu: {
         navbar: {
@@ -95,7 +96,8 @@ const translations = {
                 "Next.js",
                 "Ionic keretrendszer Angularhoz"
             ]
-        }
+        },
+        emailSent: 'Az e-mail sikeresen elküldve!'
     }
 };
 
@@ -134,6 +136,22 @@ function updateLanguage(language) {
     });
 }
 
+function showAlert(message) {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'alert-box';
+    alertBox.textContent = message;
+    document.body.appendChild(alertBox);
+
+    setTimeout(() => {
+        alertBox.classList.add('fade-out');
+        setTimeout(() => alertBox.remove(), 500);
+    }, 3000);
+}
+
+function getCurrentLanguage() {
+    return document.getElementById('language-switcher').value;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     updateLanguage('hu');
 });
@@ -144,37 +162,76 @@ document.getElementById('language-switcher').addEventListener('change', function
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    if (name && email && message) {
-        console.log('Form submitted:', { name, email, message });
-        alert('Thank you for your message!');
-        // Here you would typically send the form data to your server
-    } else {
-        alert('Please fill in all fields.');
-    }
+    fetch('portfolio_backend.railway.internal/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+    })
+    .then(response => response.text())
+    .then(data => {
+        const language = getCurrentLanguage();
+        showAlert(translations[language].emailSent);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
 
-let currentProjectIndex = 0;
-const projects = document.querySelectorAll('.project');
-const totalProjects = projects.length;
+let currentSlideIndex = 0;
 
-function showProject(index) {
-    projects.forEach((project, i) => {
-        project.style.display = i === index ? 'block' : 'none';
+function showSlide(index) {
+    const slides = document.querySelectorAll('.project');
+    const dots = document.querySelectorAll('.dot');
+
+    if (index >= slides.length) {
+        currentSlideIndex = 0;
+    } else if (index < 0) {
+        currentSlideIndex = slides.length - 1;
+    } else {
+        currentSlideIndex = index;
+    }
+
+    slides.forEach((slide, i) => {
+        slide.style.display = i === currentSlideIndex ? 'block' : 'none';
+    });
+
+    dots.forEach((dot, i) => {
+        dot.className = dot.className.replace(' active', '');
+        if (i === currentSlideIndex) {
+            dot.className += ' active';
+        }
     });
 }
 
-function nextProject() {
-    currentProjectIndex = (currentProjectIndex + 1) % totalProjects;
-    showProject(currentProjectIndex);
+function currentSlide(index) {
+    showSlide(index);
 }
 
-showProject(currentProjectIndex);
+// Initialize the first slide
+showSlide(currentSlideIndex);
 
-setInterval(nextProject, 30000);
+document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+        showSlide(index);
+    });
+});
+
+document.querySelectorAll('.project').forEach((project, index) => {
+    project.addEventListener('click', function() {
+        showSlide(index + 1);
+    });
+});
+
+setInterval(function() {
+    showSlide(currentSlideIndex + 1);
+}, 30000);
 
 function toggleMenu() {
     const navbar = document.getElementById('navbar');
