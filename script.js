@@ -264,3 +264,5 @@ document.querySelectorAll('nav a').forEach(anchor => {
         }
     });
 });
+
+document.getElementById('menu-toggle').addEventListener('click', toggleMenu);

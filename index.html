@@ -8,9 +8,13 @@
 </head>
 <body>
     <header class="hero-header">
+        <video autoplay muted loop id="header-video" preload="auto" playsinline>
+            <source src="video/header_background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <h1>Szoboszlai István</h1>
         <p id="header-subtitle"></p>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <button class="menu-toggle" onclick="toggleMenu()" type="button">&#9776;</button>
         <nav class="hero-nav" id="navbar">
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -87,14 +91,14 @@
             <li>LinkedIn: <a href="https://www.linkedin.com/in/istv%C3%A1n-szoboszlai-692b12223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app&fbclid=IwZXh0bgNhZW0CMTAAAR3rj-r5b4xUzYWTuB8SgeDn-o6bYrcjMYt8ZxvheueCRtLxE5M4x8cHVi8_aem_LX60al63cuENsMKUkh72MQ" target="_blank">linkedin.com/in/istvan</a></li>
         </ul>
         <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name" aria-label="Name">Name:</label>
+            <input type="text" id="name" name="name" required aria-required="true">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email" aria-label="Email">Email:</label>
+            <input type="email" id="email" name="email" required aria-required="true">
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message" aria-label="Message">Message:</label>
+            <textarea id="message" name="message" required aria-required="true"></textarea>
 
             <button type="submit">Send</button>
         </form>
