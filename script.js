@@ -2,7 +2,7 @@ const translations = {
     en: {
         navbar: {
             about: "About Me",
-            projects: "Projects",
+            services: "Services",
             contact: "Contact"
         },
         header: "Full-stack Web Developer and more",
@@ -21,7 +21,7 @@ const translations = {
             callToAction: "If you're looking for a reliable and dedicated developer, feel free to reach out to me!"
         },
         about: "",
-        projects: "Projects",
+        services: "Services",
         contact: "If you would like to get in touch, please use the form below or reach out via email or phone:",
         form: {
             name: "Name:",
@@ -29,10 +29,36 @@ const translations = {
             message: "Message:",
             send: "Send"
         },
-        projectDescriptions: [
-            "A web application that simplifies task management and increases productivity. Built with React and Node.js.",
-            "An e-commerce platform that offers seamless shopping experiences with integrated payment solutions. Developed using Django and Vue.js.",
-            "A mobile-friendly website for a local restaurant with an interactive menu and online booking system. Built with HTML, CSS, and JavaScript."
+        serviceDescriptions: [
+            {
+                title: "Landing Page Creation",
+                description: "Make a stunning first impression! We design custom, fast-loading, and mobile-friendly landing pages tailored to your business needs.",
+                features: [
+                    "Eye-catching design: Modern visuals that captivate your audience.",
+                    "Fast performance: Technical optimization for maximum speed.",
+                    "Goal-oriented layout: A structure and content designed to meet customer needs."
+                ]
+            },
+            {
+                title: "Landing Page with Admin Panel (Powered by Strapi)",
+                description: "Take full control of your website! We offer custom-designed landing pages with a built-in admin panel and database, enabling you to easily modify your content anytime. The admin panel is powered by Strapi, a modern, fast, and flexible content management system.",
+                features: [
+                    "User-friendly admin interface: Strapi's intuitive interface makes content updates simple, even without technical skills.",
+                    "Flexible content management: Effortlessly update text, images, or even product catalogs.",
+                    "Secure database: A stable and reliable backend ensures your data's safety.",
+                    "Scalability and customization: Strapi allows the admin panel to be fully tailored to your needs."
+                ]
+            },
+            {
+                title: "Event Management and Booking System",
+                description: "Simplify and automate event organization or appointment scheduling. We create custom web applications tailored to your business needs.",
+                features: [
+                    "Interactive event calendar: An easy-to-use interface for adding, editing, and managing events.",
+                    "Booking functionality: Automated appointment booking with notifications and confirmations.",
+                    "Mobile-friendly design: Accessible and seamless across all devices.",
+                    "Data management: Secure database for storing participant information."
+                ]
+            }
         ],
         tools: {
             title: "Tools I Use",
@@ -52,7 +78,7 @@ const translations = {
     hu: {
         navbar: {
             about: "Rólam",
-            projects: "Projektek",
+            services: "Szolgáltatások",
             contact: "Kapcsolat"
         },
         header: "Full-stack webfejlesztő és még több",
@@ -71,7 +97,7 @@ const translations = {
             callToAction: "Ha egy megbízható és elkötelezett fejlesztőt keresel, keress meg bátran!"
         },
         about: "",
-        projects: "Projektek",
+        services: "Szolgáltatások",
         contact: "Ha szeretne kapcsolatba lépni velem, kérjük, használja az alábbi űrlapot, vagy lépjen kapcsolatba e-mailben vagy telefonon:",
         form: {
             name: "Név:",
@@ -79,10 +105,36 @@ const translations = {
             message: "Üzenet:",
             send: "Küldés"
         },
-        projectDescriptions: [
-            "Egy webalkalmazás, amely egyszerűsíti a feladatkezelést és növeli a termelékenységet. React és Node.js segítségével készült.",
-            "Egy e-kereskedelmi platform, amely zökkenőmentes vásárlási élményeket kínál integrált fizetési megoldásokkal. Django és Vue.js használatával fejlesztve.",
-            "Egy mobilbarát weboldal egy helyi étterem számára, amely interaktív menüvel és online foglalási rendszerrel rendelkezik. HTML, CSS és JavaScript segítségével készült."
+        serviceDescriptions: [
+            {
+                title: "Landing Page Készítés",
+                description: "Hozzon létre egy lenyűgöző első benyomást! Egyedi tervezésű, gyorsan betöltődő és mobilbarát landing page-eket készítek, amelyek tökéletesen igazodnak az Ön vállalkozásához.",
+                features: [
+                    "Figyelemfelkeltő design: Modern megjelenés, amely megragadja látogatóit.",
+                    "Gyors betöltés: Technikai optimalizáció a maximális teljesítmény érdekében.",
+                    "Célorientált kialakítás: Az ügyfelek igényeire szabott struktúra és tartalom."
+                ]
+            },
+            {
+                title: "Landing Page Admin Panellel (Strapi alapú)",
+                description: "Teljes körű kontroll az Ön weboldala felett! Egyedi tervezésű landing page-eket kínálunk beépített admin panellel és adatbázissal, hogy Ön bármikor könnyedén módosíthassa weboldalának tartalmát. Az admin panel alapját a Strapi biztosítja, amely egy modern, gyors és rugalmas tartalomkezelő rendszer.",
+                features: [
+                    "Felhasználóbarát admin felület: A Strapi intuitív kezelőfelülete lehetővé teszi, hogy technikai tudás nélkül is könnyedén módosítson tartalmakat.",
+                    "Rugalmas tartalomkezelés: Egyszerű frissítések szövegekhez, képekhez vagy akár termékkatalógusokhoz.",
+                    "Biztonságos adatbázis: Stabil és megbízható háttérrendszer az adatai számára.",
+                    "Skálázhatóság és testreszabhatóság: A Strapi lehetővé teszi, hogy az admin panel teljes mértékben az Ön igényeire legyen szabva."
+                ]
+            },
+            {
+                title: "Eseménykezelő és Foglalási Rendszer",
+                description: "Segítünk egyszerűsíteni és automatizálni az események szervezését vagy az időpontok foglalását. Egyedi, igényekre szabott webes alkalmazásokat készítek, amelyek tökéletesen illeszkednek vállalkozásához.",
+                features: [
+                    "Interaktív eseménynaptár: Könnyen használható felület események hozzáadására, módosítására és kezelésére.",
+                    "Foglalási funkció: Automatikus időpontfoglalás értesítésekkel és visszaigazolásokkal.",
+                    "Mobilbarát kialakítás: Minden eszközön elérhető és zökkenőmentesen használható.",
+                    "Adatkezelés: Biztonságos adatbázis a résztvevők adatainak tárolásához."
+                ]
+            }
         ],
         tools: {
             title: "Eszközök, amelyeket használok",
@@ -103,7 +155,7 @@ const translations = {
 
 function updateLanguage(language) {
     document.querySelector('nav ul li a[href="#about"]').textContent = translations[language].navbar.about;
-    document.querySelector('nav ul li a[href="#projects"]').textContent = translations[language].navbar.projects;
+    document.querySelector('nav ul li a[href="#services"]').textContent = translations[language].navbar.services;
     document.querySelector('nav ul li a[href="#contact"]').textContent = translations[language].navbar.contact;
     document.querySelector('header p').textContent = translations[language].header;
     document.querySelector('#about h2').textContent = translations[language].navbar.about;
@@ -118,15 +170,24 @@ function updateLanguage(language) {
     introductionElements[3].textContent = translations[language].introduction.perseverance;
     introductionElements[4].textContent = translations[language].introduction.goal;
     introductionElements[5].textContent = translations[language].introduction.callToAction;
-    document.querySelector('#projects h2').textContent = translations[language].projects;
+    document.querySelector('#services h2').textContent = translations[language].services;
     document.querySelector('#contact h2').textContent = translations[language].navbar.contact;
     document.querySelector('#contact p').textContent = translations[language].contact;
     document.querySelector('label[for="name"]').textContent = translations[language].form.name;
     document.querySelector('label[for="email"]').textContent = translations[language].form.email;
     document.querySelector('label[for="message"]').textContent = translations[language].form.message;
     document.querySelector('button[type="submit"]').textContent = translations[language].form.send;
-    document.querySelectorAll('.project p').forEach((element, index) => {
-        element.textContent = translations[language].projectDescriptions[index];
+    document.querySelectorAll('.service').forEach((serviceElement, index) => {
+        const serviceData = translations[language].serviceDescriptions[index];
+        serviceElement.querySelector('h3').textContent = serviceData.title;
+        serviceElement.querySelector('p').textContent = serviceData.description;
+        const ulElement = serviceElement.querySelector('ul');
+        ulElement.innerHTML = '';
+        serviceData.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            ulElement.appendChild(li);
+        });
     });
     document.querySelector('#tools h2').textContent = translations[language].tools.title;
     document.querySelector('#tools p').textContent = translations[language].tools.description;
@@ -188,8 +249,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 let currentSlideIndex = 0;
 
+function currentSlide(index) {
+    showSlide(index);
+}
+
 function showSlide(index) {
-    const slides = document.querySelectorAll('.project');
+    const slides = document.querySelectorAll('.service');
     const dots = document.querySelectorAll('.dot');
 
     if (index >= slides.length) {
@@ -212,28 +277,24 @@ function showSlide(index) {
     });
 }
 
-function currentSlide(index) {
-    showSlide(index);
-}
-
 // Initialize the first slide
 showSlide(currentSlideIndex);
 
 document.querySelectorAll('.dot').forEach((dot, index) => {
     dot.addEventListener('click', function() {
-        showSlide(index);
-    });
-});
-
-document.querySelectorAll('.project').forEach((project, index) => {
-    project.addEventListener('click', function() {
-        showSlide(index + 1);
+        currentSlide(index);
     });
 });
 
 setInterval(function() {
     showSlide(currentSlideIndex + 1);
 }, 30000);
+
+document.querySelectorAll('.service').forEach((project, index) => {
+    project.addEventListener('click', function() {
+        currentSlide(index + 1);
+    });
+});
 
 function toggleMenu() {
     const navbar = document.getElementById('navbar');
