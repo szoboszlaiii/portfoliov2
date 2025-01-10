@@ -29,6 +29,7 @@ const translations = {
             message: "Message:",
             send: "Send"
         },
+        phone: "Phone:",
         serviceDescriptions: [
             {
                 title: "Landing Page Creation",
@@ -98,13 +99,14 @@ const translations = {
         },
         about: "",
         services: "Szolgáltatások",
-        contact: "Ha szeretne kapcsolatba lépni velem, kérjük, használja az alábbi űrlapot, vagy lépjen kapcsolatba e-mailben vagy telefonon:",
+        contact: "Ha szeretne kapcsolatba lépni velem, kérem, használja az alábbi űrlapot, vagy lépjen kapcsolatba e-mailben vagy telefonon:",
         form: {
             name: "Név:",
             email: "Email:",
             message: "Üzenet:",
             send: "Küldés"
         },
+        phone: "Telefon:",
         serviceDescriptions: [
             {
                 title: "Landing Page Készítés",
@@ -177,6 +179,7 @@ function updateLanguage(language) {
     document.querySelector('label[for="email"]').textContent = translations[language].form.email;
     document.querySelector('label[for="message"]').textContent = translations[language].form.message;
     document.querySelector('button[type="submit"]').textContent = translations[language].form.send;
+    document.getElementById('phone-label').textContent = `${translations[language].phone} +36 30 446 4794`;
     document.querySelectorAll('.service').forEach((serviceElement, index) => {
         const serviceData = translations[language].serviceDescriptions[index];
         serviceElement.querySelector('h3').textContent = serviceData.title;
@@ -266,7 +269,12 @@ function showSlide(index) {
     }
 
     slides.forEach((slide, i) => {
-        slide.style.display = i === currentSlideIndex ? 'block' : 'none';
+        slide.style.display = 'none';
+        slide.classList.remove('active');
+        if (i === currentSlideIndex) {
+            slide.style.display = 'block';
+            setTimeout(() => slide.classList.add('active'), 10); // Add a slight delay to trigger animation
+        }
     });
 
     dots.forEach((dot, i) => {

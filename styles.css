@@ -130,6 +130,7 @@ section {
 }
 
 .service {
+    display: none;
     flex: 1 1 calc(33.333% - 20px);
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -138,6 +139,14 @@ section {
     color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.service.active {
+    display: block;
+    opacity: 1;
 }
 
 .service h3 {
@@ -636,4 +645,12 @@ header, .hero-header, .hero-nav, section, footer {
     .menu-toggle {
         display: none;
     }
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
 }
